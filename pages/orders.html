@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purchase Orders | StockWise</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/extra.css">
+<link rel="stylesheet" href="../assets/css/pad.css">
+<link rel="stylesheet" href="../assets/css/final.css">
+<link rel="stylesheet" href="../assets/css/more.css">
+<link rel="stylesheet" href="../assets/css/ultra.css">
+
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/extra.js" defer></script>
+<script src="../assets/js/pad.js" defer>
+<script src="../assets/js/more.js" defer></script>
+</script>
+</head><body>
+<div class="app">
+<aside class="sidebar">
+  <div class="sidebar-header"><i class="fas fa-cubes"></i> StockWise</div>
+  <nav style="padding:.75rem 0">
+<a href="../index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+<a href="../pages/dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+<a href="../pages/inventory.html" class="nav-item"><i class="fas fa-boxes"></i> Inventory</a>
+<a href="../pages/orders.html" class="nav-item"><i class="fas fa-shopping-cart"></i> Purchase Orders</a>
+<a href="../pages/suppliers.html" class="nav-item"><i class="fas fa-truck"></i> Suppliers</a>
+<a href="../pages/warehouses.html" class="nav-item"><i class="fas fa-warehouse"></i> Warehouses</a>
+<a href="../pages/movements.html" class="nav-item"><i class="fas fa-exchange-alt"></i> Stock Movements</a>
+<a href="../pages/reports.html" class="nav-item"><i class="fas fa-chart-bar"></i> Reports</a>
+<a href="../pages/settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+</nav>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <h1 style="font-size:1.25rem;font-weight:600">Purchase Orders</h1>
+    <div style="display:flex;gap:.5rem;align-items:center">
+      <button class="btn btn-sm btn-outline" id="themeToggle"><i class="fas fa-moon"></i></button>
+      <button class="btn btn-sm btn-outline" onclick="SW.showToast('Alerts','2 low-stock items','warning')"><i class="fas fa-bell"></i></button>
+      <button class="btn btn-sm" onclick="openModal('Quick Add','<form data-validate><div class=form-group><label>Item Name</label><input class=form-control required></div><div class=form-group><label>Quantity</label><input type=number class=form-control></div><button class=btn type=submit>Add</button></form>')"><i class="fas fa-plus"></i> Add</button>
+    </div>
+  </header>
+  <div class="content">
+
+<div class="page-actions"><button class="btn" onclick="openModal('New Purchase Order','<form data-validate><div class=form-group><label>Supplier</label><select class=form-control><option>TechSupply Co</option><option>Global Parts Ltd</option><option>ElectroMart</option><option>OfficePro</option><option>GadgetHub</option><option>ComponentKing</option><option>DigitalSource</option><option>PrimeDistributors</option></select></div><div class=form-group><label>Expected Date</label><input type=date class=form-control></div><div class=form-group><label>Notes</label><textarea class=form-control rows=2></textarea></div><button class=btn type=submit>Create PO</button></form>')"><i class="fas fa-plus"></i> New PO</button></div>
+<div class="card"><div class="card-body" style="padding:0"><table class="table"><thead><tr><th>PO #</th><th>Supplier</th><th>Items</th><th>Value</th><th>Date</th><th>Status</th><th></th></tr></thead><tbody><tr><td>PO-5000</td><td>DigitalSource</td><td>25 items</td><td>₹216,660</td><td>2024-11-25</td><td><span class='badge badge-warning'>Pending</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5001</td><td>PrimeDistributors</td><td>5 items</td><td>₹194,820</td><td>2024-11-10</td><td><span class='badge badge-warning'>Pending</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5002</td><td>ElectroMart</td><td>35 items</td><td>₹168,406</td><td>2024-11-20</td><td><span class='badge badge-success'>Pending</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5003</td><td>Global Parts Ltd</td><td>11 items</td><td>₹131,301</td><td>2024-11-18</td><td><span class='badge badge-success'>Partial</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5004</td><td>TechSupply Co</td><td>34 items</td><td>₹183,295</td><td>2024-11-14</td><td><span class='badge badge-primary'>Received</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5005</td><td>TechSupply Co</td><td>20 items</td><td>₹183,168</td><td>2024-11-21</td><td><span class='badge badge-primary'>Received</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5006</td><td>DigitalSource</td><td>16 items</td><td>₹171,674</td><td>2024-11-24</td><td><span class='badge badge-success'>Partial</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5007</td><td>ElectroMart</td><td>17 items</td><td>₹196,928</td><td>2024-11-19</td><td><span class='badge badge-primary'>Pending</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5008</td><td>PrimeDistributors</td><td>24 items</td><td>₹47,218</td><td>2024-11-10</td><td><span class='badge badge-warning'>Partial</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5009</td><td>ComponentKing</td><td>35 items</td><td>₹175,652</td><td>2024-11-27</td><td><span class='badge badge-primary'>Partial</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5010</td><td>DigitalSource</td><td>5 items</td><td>₹115,697</td><td>2024-11-20</td><td><span class='badge badge-primary'>Received</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr><tr><td>PO-5011</td><td>OfficePro</td><td>17 items</td><td>₹32,213</td><td>2024-11-19</td><td><span class='badge badge-primary'>Received</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('PO','Opening order...','info')">View</button></td></tr></tbody></table></div></div>
+
+  </div>
+</main></div>
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal"><div class="modal-header"><h3 id="modalTitle">Modal</h3><button id="modalClose" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted)">&times;</button></div>
+  <div class="modal-body" id="modalBody"></div></div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+</body></html>

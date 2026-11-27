@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warehouses | StockWise</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/extra.css">
+<link rel="stylesheet" href="../assets/css/pad.css">
+<link rel="stylesheet" href="../assets/css/final.css">
+<link rel="stylesheet" href="../assets/css/more.css">
+<link rel="stylesheet" href="../assets/css/ultra.css">
+
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/extra.js" defer></script>
+<script src="../assets/js/pad.js" defer>
+<script src="../assets/js/more.js" defer></script>
+</script>
+</head><body>
+<div class="app">
+<aside class="sidebar">
+  <div class="sidebar-header"><i class="fas fa-cubes"></i> StockWise</div>
+  <nav style="padding:.75rem 0">
+<a href="../index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+<a href="../pages/dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+<a href="../pages/inventory.html" class="nav-item"><i class="fas fa-boxes"></i> Inventory</a>
+<a href="../pages/orders.html" class="nav-item"><i class="fas fa-shopping-cart"></i> Purchase Orders</a>
+<a href="../pages/suppliers.html" class="nav-item"><i class="fas fa-truck"></i> Suppliers</a>
+<a href="../pages/warehouses.html" class="nav-item"><i class="fas fa-warehouse"></i> Warehouses</a>
+<a href="../pages/movements.html" class="nav-item"><i class="fas fa-exchange-alt"></i> Stock Movements</a>
+<a href="../pages/reports.html" class="nav-item"><i class="fas fa-chart-bar"></i> Reports</a>
+<a href="../pages/settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+</nav>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <h1 style="font-size:1.25rem;font-weight:600">Warehouses</h1>
+    <div style="display:flex;gap:.5rem;align-items:center">
+      <button class="btn btn-sm btn-outline" id="themeToggle"><i class="fas fa-moon"></i></button>
+      <button class="btn btn-sm btn-outline" onclick="SW.showToast('Alerts','2 low-stock items','warning')"><i class="fas fa-bell"></i></button>
+      <button class="btn btn-sm" onclick="openModal('Quick Add','<form data-validate><div class=form-group><label>Item Name</label><input class=form-control required></div><div class=form-group><label>Quantity</label><input type=number class=form-control></div><button class=btn type=submit>Add</button></form>')"><i class="fas fa-plus"></i> Add</button>
+    </div>
+  </header>
+  <div class="content">
+
+<div class="page-actions"><button class="btn" onclick="SW.showToast('Warehouse','Add form opened','info')"><i class="fas fa-plus"></i> Add Warehouse</button></div>
+<div class="card"><div class="card-body" style="padding:0"><table class="table"><thead><tr><th>ID</th><th>Name</th><th>Size</th><th>Items</th><th>Utilization</th><th></th></tr></thead><tbody><tr><td>WH-100</td><td>Main Warehouse</td><td>3915 sq.ft</td><td>1642 items</td><td>79% capacity</td><td><button class='btn btn-sm btn-outline'>Manage</button></td></tr><tr><td>WH-101</td><td>North Hub</td><td>2542 sq.ft</td><td>3558 items</td><td>63% capacity</td><td><button class='btn btn-sm btn-outline'>Manage</button></td></tr><tr><td>WH-102</td><td>South Depot</td><td>3026 sq.ft</td><td>2273 items</td><td>81% capacity</td><td><button class='btn btn-sm btn-outline'>Manage</button></td></tr><tr><td>WH-103</td><td>East Storage</td><td>2500 sq.ft</td><td>930 items</td><td>91% capacity</td><td><button class='btn btn-sm btn-outline'>Manage</button></td></tr><tr><td>WH-104</td><td>West Fulfillment</td><td>601 sq.ft</td><td>3587 items</td><td>88% capacity</td><td><button class='btn btn-sm btn-outline'>Manage</button></td></tr></tbody></table></div></div>
+
+  </div>
+</main></div>
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal"><div class="modal-header"><h3 id="modalTitle">Modal</h3><button id="modalClose" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted)">&times;</button></div>
+  <div class="modal-body" id="modalBody"></div></div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+</body></html>

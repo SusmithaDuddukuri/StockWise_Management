@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suppliers | StockWise</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/extra.css">
+<link rel="stylesheet" href="../assets/css/pad.css">
+<link rel="stylesheet" href="../assets/css/final.css">
+<link rel="stylesheet" href="../assets/css/more.css">
+<link rel="stylesheet" href="../assets/css/ultra.css">
+
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/extra.js" defer></script>
+<script src="../assets/js/pad.js" defer>
+<script src="../assets/js/more.js" defer></script>
+</script>
+</head><body>
+<div class="app">
+<aside class="sidebar">
+  <div class="sidebar-header"><i class="fas fa-cubes"></i> StockWise</div>
+  <nav style="padding:.75rem 0">
+<a href="../index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+<a href="../pages/dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+<a href="../pages/inventory.html" class="nav-item"><i class="fas fa-boxes"></i> Inventory</a>
+<a href="../pages/orders.html" class="nav-item"><i class="fas fa-shopping-cart"></i> Purchase Orders</a>
+<a href="../pages/suppliers.html" class="nav-item"><i class="fas fa-truck"></i> Suppliers</a>
+<a href="../pages/warehouses.html" class="nav-item"><i class="fas fa-warehouse"></i> Warehouses</a>
+<a href="../pages/movements.html" class="nav-item"><i class="fas fa-exchange-alt"></i> Stock Movements</a>
+<a href="../pages/reports.html" class="nav-item"><i class="fas fa-chart-bar"></i> Reports</a>
+<a href="../pages/settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+</nav>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <h1 style="font-size:1.25rem;font-weight:600">Suppliers</h1>
+    <div style="display:flex;gap:.5rem;align-items:center">
+      <button class="btn btn-sm btn-outline" id="themeToggle"><i class="fas fa-moon"></i></button>
+      <button class="btn btn-sm btn-outline" onclick="SW.showToast('Alerts','2 low-stock items','warning')"><i class="fas fa-bell"></i></button>
+      <button class="btn btn-sm" onclick="openModal('Quick Add','<form data-validate><div class=form-group><label>Item Name</label><input class=form-control required></div><div class=form-group><label>Quantity</label><input type=number class=form-control></div><button class=btn type=submit>Add</button></form>')"><i class="fas fa-plus"></i> Add</button>
+    </div>
+  </header>
+  <div class="content">
+
+<div class="page-actions"><button class="btn" onclick="openModal('Add Supplier','<form data-validate><div class=form-group><label>Name *</label><input class=form-control required></div><div class=form-group><label>Contact</label><input class=form-control></div><div class=form-group><label>Category</label><input class=form-control></div><button class=btn type=submit>Save</button></form>')"><i class="fas fa-plus"></i> Add Supplier</button></div>
+<div class="card"><div class="card-body" style="padding:0"><table class="table"><thead><tr><th>ID</th><th>Name</th><th>Category</th><th>Phone</th><th>Status</th><th></th></tr></thead><tbody><tr><td>SUP-200</td><td>DigitalSource</td><td>Electronics</td><td>+91 9566646116</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-201</td><td>ElectroMart</td><td>Mixed</td><td>+91 7072387380</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-202</td><td>ElectroMart</td><td>Office</td><td>+91 9257514632</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-203</td><td>Global Parts Ltd</td><td>Office</td><td>+91 9421980406</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-204</td><td>ElectroMart</td><td>Office</td><td>+91 9865826472</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-205</td><td>ComponentKing</td><td>Mixed</td><td>+91 9368934689</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-206</td><td>ElectroMart</td><td>Electronics</td><td>+91 9424778717</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-207</td><td>DigitalSource</td><td>Office</td><td>+91 9017794145</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-208</td><td>Global Parts Ltd</td><td>Mixed</td><td>+91 7307139027</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr><tr><td>SUP-209</td><td>GadgetHub</td><td>Electronics</td><td>+91 8104896798</td><td><span class='badge badge-success'>Active</span></td><td><button class='btn btn-sm btn-outline' onclick="SW.showToast('Supplier','Profile opened','info')">View</button></td></tr></tbody></table></div></div>
+
+  </div>
+</main></div>
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal"><div class="modal-header"><h3 id="modalTitle">Modal</h3><button id="modalClose" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted)">&times;</button></div>
+  <div class="modal-body" id="modalBody"></div></div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+</body></html>

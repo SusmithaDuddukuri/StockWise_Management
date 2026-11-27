@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Movements | StockWise</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/extra.css">
+<link rel="stylesheet" href="../assets/css/pad.css">
+<link rel="stylesheet" href="../assets/css/final.css">
+<link rel="stylesheet" href="../assets/css/more.css">
+<link rel="stylesheet" href="../assets/css/ultra.css">
+
+<script src="../assets/js/app.js" defer></script>
+<script src="../assets/js/extra.js" defer></script>
+<script src="../assets/js/pad.js" defer>
+<script src="../assets/js/more.js" defer></script>
+</script>
+</head><body>
+<div class="app">
+<aside class="sidebar">
+  <div class="sidebar-header"><i class="fas fa-cubes"></i> StockWise</div>
+  <nav style="padding:.75rem 0">
+<a href="../index.html" class="nav-item"><i class="fas fa-home"></i> Home</a>
+<a href="../pages/dashboard.html" class="nav-item"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+<a href="../pages/inventory.html" class="nav-item"><i class="fas fa-boxes"></i> Inventory</a>
+<a href="../pages/orders.html" class="nav-item"><i class="fas fa-shopping-cart"></i> Purchase Orders</a>
+<a href="../pages/suppliers.html" class="nav-item"><i class="fas fa-truck"></i> Suppliers</a>
+<a href="../pages/warehouses.html" class="nav-item"><i class="fas fa-warehouse"></i> Warehouses</a>
+<a href="../pages/movements.html" class="nav-item"><i class="fas fa-exchange-alt"></i> Stock Movements</a>
+<a href="../pages/reports.html" class="nav-item"><i class="fas fa-chart-bar"></i> Reports</a>
+<a href="../pages/settings.html" class="nav-item"><i class="fas fa-cog"></i> Settings</a>
+</nav>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <h1 style="font-size:1.25rem;font-weight:600">Stock Movements</h1>
+    <div style="display:flex;gap:.5rem;align-items:center">
+      <button class="btn btn-sm btn-outline" id="themeToggle"><i class="fas fa-moon"></i></button>
+      <button class="btn btn-sm btn-outline" onclick="SW.showToast('Alerts','2 low-stock items','warning')"><i class="fas fa-bell"></i></button>
+      <button class="btn btn-sm" onclick="openModal('Quick Add','<form data-validate><div class=form-group><label>Item Name</label><input class=form-control required></div><div class=form-group><label>Quantity</label><input type=number class=form-control></div><button class=btn type=submit>Add</button></form>')"><i class="fas fa-plus"></i> Add</button>
+    </div>
+  </header>
+  <div class="content">
+
+<div class="page-actions"><button class="btn" onclick="openModal('Record Movement','<form data-validate><div class=form-group><label>Item</label><select class=form-control><option>Laptop Charger</option><option>USB-C Cable</option><option>Wireless Mouse</option><option>Keyboard</option><option>Monitor Stand</option><option>Webcam</option><option>Headset</option><option>SSD 1TB</option><option>RAM 16GB</option><option>Power Bank</option></select></div><div class=form-group><label>Type</label><select class=form-control><option>IN</option><option>OUT</option><option>TRANSFER</option><option>ADJUST</option></select></div><div class=form-group><label>Quantity</label><input type=number class=form-control required></div><button class=btn type=submit>Record</button></form>')"><i class="fas fa-plus"></i> Record Movement</button></div>
+<div class="card"><div class="card-body" style="padding:0"><table class="table"><thead><tr><th>ID</th><th>Item</th><th>Type</th><th>Qty</th><th>Location</th><th>Date</th><th></th></tr></thead><tbody><tr><td>MV-9000</td><td>Stapler</td><td>TRANSFER</td><td>51</td><td>Main Warehouse</td><td>2024-11-25</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9001</td><td>HDMI Cable</td><td>ADJUST</td><td>145</td><td>North Hub</td><td>2024-11-27</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9002</td><td>Headset</td><td>OUT</td><td>8</td><td>North Hub</td><td>2024-11-21</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9003</td><td>Wireless Mouse</td><td>TRANSFER</td><td>197</td><td>East Storage</td><td>2024-11-27</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9004</td><td>Pen Set</td><td>IN</td><td>69</td><td>North Hub</td><td>2024-11-22</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9005</td><td>External HDD</td><td>TRANSFER</td><td>133</td><td>South Depot</td><td>2024-11-27</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9006</td><td>Power Bank</td><td>TRANSFER</td><td>129</td><td>South Depot</td><td>2024-11-23</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9007</td><td>Headset</td><td>TRANSFER</td><td>90</td><td>West Fulfillment</td><td>2024-11-23</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9008</td><td>HDMI Cable</td><td>TRANSFER</td><td>161</td><td>Main Warehouse</td><td>2024-11-24</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9009</td><td>Pen Set</td><td>IN</td><td>30</td><td>East Storage</td><td>2024-11-25</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9010</td><td>Mouse Pad</td><td>TRANSFER</td><td>117</td><td>East Storage</td><td>2024-11-21</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9011</td><td>External HDD</td><td>OUT</td><td>138</td><td>North Hub</td><td>2024-11-21</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9012</td><td>Laptop Bag</td><td>IN</td><td>197</td><td>West Fulfillment</td><td>2024-11-24</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr><tr><td>MV-9013</td><td>Mouse Pad</td><td>ADJUST</td><td>20</td><td>Main Warehouse</td><td>2024-11-27</td><td><button class='btn btn-sm btn-outline'>Details</button></td></tr></tbody></table></div></div>
+
+  </div>
+</main></div>
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal"><div class="modal-header"><h3 id="modalTitle">Modal</h3><button id="modalClose" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted)">&times;</button></div>
+  <div class="modal-body" id="modalBody"></div></div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+</body></html>
